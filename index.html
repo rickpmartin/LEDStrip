@@ -15,12 +15,13 @@
     <script type="text/javascript" src="twinklesparkle.js"></script>
     <script type="text/javascript" src="fire.js"></script>
     <script type="text/javascript" src="eyeblink.js"></script>
+    <script type="text/javascript" src="dna.js"></script>
     <script type="text/javascript">
     var strip, animation; // need to be global
 
     $(document).ready(function(){
       var container = $('.ledstrip')[0];
-      var light_count = 30;
+      var light_count = 90;
       strip = LEDstrip(container, light_count);
       driver = new ColorWave(strip);
       driver.init();
@@ -62,6 +63,9 @@
           case 'eyeblink':
             driver = new Eyeblinks(strip);
             break;
+          case 'dna':
+            driver = new DNA(strip);
+            break;
       /*
           case 'cycle': 
             cycle.color_cycle();
@@ -102,6 +106,7 @@
              <option value="twinklesparkle">TwinkleSparkle</option>
              <option value="fire">Fire</option>
              <option value="eyeblink">Eyeblink</option>
+             <option value="dna">DNA</option>
              <!-- <option value="cycle">Color Cycle</option> -->
              <!-- option value="flares">Flares</option -->
              <option value="stop">Stop</option>
